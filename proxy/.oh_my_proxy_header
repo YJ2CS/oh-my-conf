@@ -1,0 +1,5 @@
+# CUSTOM MIRRORS
+
+export HOST_IP=$(grep -oP '(?<=nameserver\ ).*' /etc/resolv.conf)
+export PORXY_ADDR="http://$HOST_IP:7890"
+

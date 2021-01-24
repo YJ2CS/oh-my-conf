@@ -1,0 +1,26 @@
+# 修改oh-my-zsh的主题，这里推荐使用agnoster主题（也可选择其他）
+ZSH_THEME="agnoster"
+
+# 保存文件后退出回到Shell，然后输入
+# source ~/.zshrc
+
+# 在配置文件中主题行的后一行添加neofetch（在文件的末尾加也可以）
+neofetch
+
+# add proxy support
+# if file  exist , then execute  it.
+if [  -f ~/.oh_my_proxy_header ]; then
+    . ~/.oh_my_proxy_header
+fi
+
+if [  -f ~/.oh_my_zsh_proxy ]; then
+    . ~/.oh_my_zsh_proxy
+fi
+
+if [  -f ~/.oh_my_apt_proxy ]; then
+    . ~/.oh_my_apt_proxy
+fi
+
+if [  -f ~/.oh_my_npm_yarn_proxy ]; then
+    . ~/.oh_my_npm_yarn_proxy
+fi

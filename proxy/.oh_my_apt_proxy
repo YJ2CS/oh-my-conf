@@ -1,0 +1,15 @@
+# PROXY FOR APT
+function proxy_apt() {
+    # make sure apt.conf existed
+    sudo touch /etc/apt/apt.conf
+    sudo sed -i '/^Acquire::https\?::Proxy/d' /etc/apt/apt.conf
+    # add proxy
+    echo -e "Acquire::http::Proxy \"$PORXY_ADDR\";\nAcquire::https::Proxy \"$PORXY_ADDR\";" | sudo tee -a /etc/apt/apt.conf >/dev/null
+    echo "current apt proxy status: using $PORXY_ADDR, proxying"
+}
+
+
+function unproxy_apt() {
+    sudo sed -i '/^Acquire::https\?::Proxy/d' /etc/apt/apt.conf
+    echo "current apt proxy status: direct connect, not proxying"
+}

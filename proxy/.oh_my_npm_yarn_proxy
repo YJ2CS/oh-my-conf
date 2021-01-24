@@ -1,0 +1,27 @@
+
+
+# PROXY FOR NPM
+function proxy_yarn() {
+    yarn config set proxy $PORXY_ADDR
+    yarn config set https-proxy $PORXY_ADDR
+    npm config set proxy $PORXY_ADDR
+    npm config set https-proxy $PORXY_ADDR
+}
+
+
+function unproxy_yarn() {
+    yarn config delete proxy
+    yarn config delete https-proxy
+    npm config delete proxy
+    npm config delete https-proxy
+}
+
+
+function proxy_npm() {
+    proxy_yarn
+}
+
+
+function unproxy_npm() {
+    unproxy_yarn
+}
