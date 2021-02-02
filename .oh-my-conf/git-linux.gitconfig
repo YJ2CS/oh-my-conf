@@ -1,0 +1,11 @@
+[core]
+	# editor = \"C:\\Users\\ZYJ\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" --wait
+	autocrlf = input
+	safecrlf = warn
+	eol = lf
+	compression = 0
+# [credential]
+# 	helper = manager
+[user]
+	email = cnyjzhang@outlook.com
+	name = YJ2CS

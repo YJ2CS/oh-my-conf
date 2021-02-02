@@ -114,21 +114,33 @@ source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+## add 第三方插件
+[[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh
 
 # add proxy support
 # if file  exist , then execute  it.
-if [  -f ~/proxy/.oh_my_proxy_header ]; then
-    . ~/proxy/.oh_my_proxy_header
+if [  -f ~/.oh-my-conf/proxy.proxy_header ]; then
+    . ~/.oh-my-conf/proxy.proxy_header
 fi
 
-if [  -f ~/proxy/.oh_my_zsh_proxy ]; then
-    . ~/proxy/.oh_my_zsh_proxy
+if [  -f ~/.oh-my-conf/proxy.shell_proxy ]; then
+    . ~/.oh-my-conf/proxy.shell_proxy
+    autoproxy
 fi
 
-if [  -f ~/proxy/.oh_my_apt_proxy ]; then
-    . ~/proxy/.oh_my_apt_proxy
+if [  -f ~/.oh-my-conf/proxy.apt_proxy ]; then
+    . ~/.oh-my-conf/proxy.apt_proxy
 fi
 
-if [  -f ~/proxy/.oh_my_npm_yarn_proxy ]; then
-    . ~/proxy/.oh_my_npm_yarn_proxy
+if [  -f ~/.oh-my-conf/proxy.npm_yarn_proxy ]; then
+    . ~/.oh-my-conf/proxy.npm_yarn_proxy
+fi
+
+if [  -f ~/.oh-my-conf/ssh-linux.ssh_agent ]; then
+    . ~/.oh-my-conf/ssh-linux.ssh_agent
+fi
+
+# set alias
+if [  -f ~/.oh-my-conf/.alias ]; then
+    . ~/.oh-my-conf/.alias
 fi

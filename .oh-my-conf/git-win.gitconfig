@@ -1,0 +1,27 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	editor = \"C:\\Users\\ZYJ\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" --wait
+	autocrlf = true
+	safecrlf = warn
+	compression = 0
+[credential]
+	helper = manager
+[user]
+	email = cnyjzhang@outlook.com
+	name = YJ2CS
+[http]
+	proxy = http://127.0.0.1:7890
+	postBuffer = 524288000
+[https]
+	proxy = http://127.0.0.1:7890
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[credential "helperselector"]
+	selected = manager

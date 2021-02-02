@@ -1,0 +1,32 @@
+
+# GLOBAL PROXY FOR ZSH
+
+
+# if ~/.shell_proxy not exist , then create it.
+if [ ! -f ~/.shell_proxy ]; then
+    touch ~/.shell_proxy
+fi
+# execute ~/.shell_proxy
+. ~/.shell_proxy
+
+function autoproxy(){
+    proxy
+}
+
+function proxy() {
+    echo -e "export {all_proxy,http_proxy,https_proxy,ALL_PROXY,HTTP_PROXY,HTTPS_PROXY}=\"$PORXY_ADDR\";" | tee ~/.shell_proxy >/dev/null
+    # apply
+    . ~/.shell_proxy
+    # declare
+    echo "current proxy status: using $PORXY_ADDR, proxying"
+}
+
+
+function unproxy() {
+    # unset all_proxy http_proxy https_proxy ALL_PROXY HTTP_PROXY HTTPS_PROXY
+    echo -e "unset all_proxy http_proxy https_proxy ALL_PROXY HTTP_PROXY HTTPS_PROXY" | tee ~/.shell_proxy >/dev/null
+    # apply
+    . ~/.shell_proxy
+    # declare
+    echo "current proxy status:  direct connect, not proxying"
+}

@@ -1,0 +1,5 @@
+alias apti="sudo apt-get install"
+# cd to workspace
+alias cwp="cd /mnt/d/app_code"
+
+alias cmb="cd /mnt/d/aMyBlog"
